@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React from 'react';
+import DeliveryBoyRegistration from './DeliveryBoyRegistration';
+import JobAllocation from './JobAllocation';
+import Map from './Map';
+import EmergencyContacts from './EmergencyContacts';
+
+const App = () => {
+  const deliveryBoys = ['A', 'B', 'C']; // You can manage delivery boys here
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 style={{ textAlign: 'center'}}>Disaster Relief Coordinating System</h1>
+      <DeliveryBoyRegistration />
+      <JobAllocation deliveryBoys={deliveryBoys} />
+      <Map />
+      <EmergencyContacts />
     </div>
   );
-}
+};
 
 export default App;
+
